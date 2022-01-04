@@ -1,0 +1,14 @@
+{
+  "name": "crack-coding-interview",
+  "version": "1.0.0",
+  "description": "practice for coding interview",
+  "main": "index.js",
+  "scripts": {
+    "test": "run test"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.4.5"
+  }
+}
