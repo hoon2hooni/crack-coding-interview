@@ -58,41 +58,34 @@
         this.topStack = newStack;
         return;
       }
-
       //그냥 추가될 때
       this.topStack.push(value);
-      //현재 스택 push(value)
     }
     pop() {
       if (!this.topStack) {
         throw new Error("안된다!");
       }
-
       const currentStack = this.topStack;
-      const prevStack = this.topStack.next;
-      if (currentStack.size === 1) {
-        if (prevStack) {
-          this.topStack = prevStack;
-        } else {
-          this.topStack = null;
-        }
+      const value = currentStack.pop();
+      if (!currentStack.size) {
+        this.topStack = currentStack.next;
       }
-      return currentStack.pop();
+      return value;
     }
   }
 
   const a = new SetOfStacks(3);
   a.push(1);
-  a.push(1);
-  a.push(1);
-  a.push(1);
+  a.push(2);
+  a.push(3);
+  a.push(4);
   console.log(a);
   console.log(a.pop());
   console.log(a.pop());
   console.log(a.pop());
-  a.push(1);
-  a.push(1);
-  a.push(1);
+  a.push(8);
+  a.push(9);
+  a.push(0);
   console.log(a.pop());
   console.log(a.pop());
   console.log(a.pop());
